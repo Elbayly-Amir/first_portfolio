@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio de Amir</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loader.css">
 </head>
 <body>
+  <div class="loader-container">
+    <div class="loader"></div>
+    <div class="loading-text">Chargement en cours...</div>
+  </div>
   <header>
     <h1>My Portfolio</h1>
     <nav>
@@ -19,7 +24,6 @@
     </nav>
     <canvas id="stars"></canvas>
     <button id="theme-toggle">🌙 Mode Sombre</button>
-
   </header>
 
   <section id="a-propos">
@@ -127,6 +131,12 @@
     <p>&copy; 2025 Amir - Tous droits réservés</p>
   </footer>
 
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.querySelector('.loader-container');
+      loader.classList.add('fade-out');
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
