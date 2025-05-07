@@ -11,6 +11,7 @@ document.querySelector("header h1").addEventListener("click", () => {
   canvas.height = window.innerHeight;
   
   let stars = [];
+  let starColor = "white"; // Couleur par défaut
   
   for (let i = 0; i < 150; i++) {
     stars.push({
@@ -23,7 +24,7 @@ document.querySelector("header h1").addEventListener("click", () => {
   
   function animateStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "white";
+    ctx.fillStyle = starColor;
     for (let star of stars) {
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -63,6 +64,10 @@ document.querySelector("header h1").addEventListener("click", () => {
     for (let key in theme) {
       root.style.setProperty(key, theme[key]);
     }
+    // Mettre à jour la couleur des étoiles
+    starColor = theme === darkTheme ? "white" : "#7f5af0";
+    // Mettre à jour la couleur de fond du canvas
+    canvas.style.background = theme === darkTheme ? "black" : "#f0f0f0";
   }
   
   function toggleTheme() {
