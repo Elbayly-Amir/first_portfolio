@@ -158,3 +158,19 @@
     background-color: #9a80f2;
   }
   
+  @media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  .timeline, .skills-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .timeline-item, .skill {
+    width: 100%;
+  }
+}
