@@ -75,7 +75,7 @@ document.querySelector("header h1").addEventListener("click", () => {
     const next = current === "dark" ? "light" : "dark";
     localStorage.setItem("theme", next);
     applyTheme(next === "dark" ? darkTheme : lightTheme);
-    btn.textContent = next === "dark" ? "🌙 Mode Sombre" : "☀️ Mode Clair";
+    btn.textContent = next === "dark" ? "🌙 Dark mode" : "☀️ Light mode";
   }
   
   btn.addEventListener("click", toggleTheme);
@@ -83,5 +83,5 @@ document.querySelector("header h1").addEventListener("click", () => {
   // Appliquer le thème au chargement
   const saved = localStorage.getItem("theme") || "dark";
   applyTheme(saved === "dark" ? darkTheme : lightTheme);
-  btn.textContent = saved === "dark" ? "🌙 Mode Sombre" : "☀️ Mode Clair";
+  btn.textContent = saved === "dark" ? "🌙 Dark mode" : "☀️ Light mode";
   
